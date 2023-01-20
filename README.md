@@ -1,3 +1,3 @@
 # Learning
-Project for learning Python
+Project for learning Python./n
 My way into IT.
