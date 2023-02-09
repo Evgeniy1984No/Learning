@@ -53,6 +53,7 @@ Sample Output 3:
 """
 n = int(input())
 matrix = [input().split() for _ in range(n)]
+print(matrix)
 [print(*row) for row in matrix]
 print()
 for i in range(n):
