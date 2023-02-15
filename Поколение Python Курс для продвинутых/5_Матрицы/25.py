@@ -51,13 +51,14 @@ Sample Output 3:
 7  6  5
 """
 n, m = map(int, input().split())
-row = []
 mat = [[0]*m for _ in range(n)]
-new = []
+nm = n
+if m < n:
+    nm = m
 k = 1
 a = 1
 if m != 1:
-    for n1 in range(n//2):
+    for n1 in range(nm//2):
         for j in range(m-a-n1):
             mat[n1][j+n1] = k
             k += 1
