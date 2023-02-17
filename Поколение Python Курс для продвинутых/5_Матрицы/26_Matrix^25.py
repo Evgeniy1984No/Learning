@@ -1,3 +1,11 @@
+"""
+Для матрицы
+
+А =   1 0
+      4 1
+Найти А^25
+"""
+
 a = [[int(i) for i in input().split()], [int(i) for i in input().split()]]
 [print(*[str(j) for j in i]) for i in a]
 b = []
