@@ -1,19 +1,6 @@
-a = [[int(i) for i in input().split()], [int(i) for i in input().split()]]
-[print(*[str(j) for j in i]) for i in a]
-b = []
-[b.append(i) for i in a]
-print()
-[print(*[str(j) for j in i]) for i in b]
-elem = 0
-c = [[0] * 2 for _ in range(2)]
+numbers = ((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4), (90, 10))
+avr = []
+for i in numbers:
+    avr.append(sum(i) / len(i))
+print(avr)
 
-for k in range(24):
-    for ci in range(2):
-        for cj in range(2):
-            for j in range(2):
-                c[ci][cj] += a[ci][j] * b[j][cj]
-
-    a = c
-    c = [[0] * 2 for _ in range(2)]
-
-[print(*[str(j) for j in i]) for i in a]
