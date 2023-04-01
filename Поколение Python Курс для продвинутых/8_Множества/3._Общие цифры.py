@@ -59,3 +59,13 @@ for i in range(1, len(s)):
     result.intersection_update(s[i])
     # print('i=', i, result)
 print(*sorted(result))
+
+"""
+__________________________________________________________________________________________________________________
+"""
+
+n = int(input())
+numbers = [input() for _ in range(n)]
+
+num_set = set(numbers[0]).intersection(*numbers)
+print(*sorted(num_set))
