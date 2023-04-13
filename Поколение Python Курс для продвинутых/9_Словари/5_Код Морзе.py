@@ -32,6 +32,6 @@ morse = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..', '.---', 
          '.--.', '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..', '-----', '.----', '..---',
          '...--', '....-', '.....', '-....', '--...', '---..', '----.']
 abc = dict(zip(letters, morse))
-for l in str(input().upper()):
-    if l in abc:
-        print(abc[l], end=' ')
+for letter in str(input().upper()):
+    if letter in abc:
+        print(abc[letter], end=' ')
