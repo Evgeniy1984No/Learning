@@ -82,3 +82,4 @@ for i in range(n):
     li.insert(0, 1)
 
 print(li)
+print(li[6])
