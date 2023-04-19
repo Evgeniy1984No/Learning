@@ -48,3 +48,22 @@ Sample Output:
 79184219577 79281234567
 абонент не найден
 """
+d = {}
+for _ in range(int(input())):
+    number, name = input().split()
+    if name.lower() in d:
+        d[name.lower()].append(number)
+    else:
+        d.update({name.lower(): [number]})
+for _ in range(int(input())):
+    print(*d.get(input().lower(), ['абонент не найден']))
+
+"""
+________________________________________________________________________________
+"""
+dct = {}
+for _ in range(int(input())):
+    phone, name = input().lower().split()
+    dct.setdefault(name, []).append(phone)
+for _ in range(int(input())):
+    print(*dct.get(input().lower(), ['абонент не найден']))
