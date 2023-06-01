@@ -53,4 +53,12 @@ while n != 1:
         if gcd(a, n) == 1 and 0 < F(i, n) < 1:
             res.add(F(i, n))
     n -= 1
-[print(i) for i in sorted(res)]
+print(*sorted(res), sep='\n')
+# *********************************************************************************
+numbers = set()
+
+for i in range(2, int(input()) + 1):
+    for j in range(1, i):
+        numbers.add(F(j, i))
+
+print(*sorted(numbers), sep='\n')
