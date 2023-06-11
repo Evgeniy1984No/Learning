@@ -16,3 +16,10 @@ ________________________________________________________________________________
 result = dict1.copy()
 for key, value in dict2.items():
     result[key] = result.get(key, 0) + value
+
+
+def f(n=3):
+    return n + 7
+
+
+print(f(f(f())))
