@@ -109,3 +109,14 @@ Sample Output 5:
 
 49
 """
+from functools import reduce
+
+
+def evaluate(*coefficients, x):
+    lst_index = [i for i, v in enumerate(coefficients)]
+    # poly = reduce(lambda a, b: a+b, list(map(lambda coef, ind: coef * x**ind, coefficients, lst_index[::-1])))
+    return reduce(lambda a, b: a+b, list(map(lambda coef, ind: coef * x**ind, coefficients, lst_index[::-1])))
+
+
+coefs = [int(i) for i in input().split()]
+print(evaluate(*coefs, x=int(input())))
