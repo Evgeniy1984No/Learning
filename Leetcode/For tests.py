@@ -22,4 +22,7 @@ def f(n=3):
     return n + 7
 
 
-print(f(f(f())))
+# print(f(f(f())))
+data = [['p', 'y', 't', 'h', 'o', 'n'], ['s', 't', 'e', 'p', 'i', 'k']]
+result = list(map(lambda x: '.'.join(x), data))
+print(result)
