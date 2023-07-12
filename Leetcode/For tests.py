@@ -21,8 +21,9 @@ for key, value in dict2.items():
 def f(n=3):
     return n + 7
 
-
+import random
 # print(f(f(f())))
-data = [['p', 'y', 't', 'h', 'o', 'n'], ['s', 't', 'e', 'p', 'i', 'k']]
+data = ['p', 'y', 't', 'h', 'o', 'n']
 result = list(map(lambda x: '.'.join(x), data))
-print(result)
+# print(result)
+print(data[random.randint(0, len(data))])
