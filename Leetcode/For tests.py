@@ -27,3 +27,6 @@ data = ['p', 'y', 't', 'h', 'o', 'n']
 result = list(map(lambda x: '.'.join(x), data))
 # print(result)
 print(data[random.randint(0, len(data))])
+
+test = [True, False]
+print(sum(test))
