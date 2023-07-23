@@ -58,5 +58,22 @@ Pink goat
 with open('C:/Users/kandz/Downloads/goats.txt', encoding='utf-8') as file_in, \
         open('C:/Users/kandz/Downloads/answer.txt', 'w', encoding='utf-8') as file_out:
     colours = set()
-    for line in file_in:
-        print(line, end='')
+    s = 0
+    lst = file_in.read().split('\n')
+    answer = list()
+    for line in lst:
+        if line not in ('COLOURS', 'GOATS'):
+            colours.add(line)
+            s += 1
+    s = s - len(colours)
+    for elem in colours:
+        count = lst.count(elem) - 1
+        if count * 100 > 7 * s:
+            answer.append(elem)
+    [print(i, file=file_out) for i in sorted(answer)]
+
+# **********************************************************************************************************************
+with open('C:/Users/kandz/Downloads/goats.txt') as f1, open('C:/Users/kandz/Downloads/answer.txt', 'w') as f2:
+    cont = f1.read().split('\n')
+    colors, goats = cont[1:cont.index('GOATS')], cont[cont.index('GOATS')+1:]
+    print(*sorted(filter(lambda x: goats.count(x) / len(goats) > 0.07, colors)), sep='\n', file=f2)
