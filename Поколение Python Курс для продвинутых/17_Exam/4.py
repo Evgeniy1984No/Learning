@@ -51,6 +51,8 @@ of the october revolution and so on
 Примечание 4. Подумайте над ситуацией, когда файл очень большой и нерационально считывать все его содержимое в память
 компьютера.
 """
-with open('C:/Users/kandz/Downloads/grades.txt', encoding='utf-8') as file:
+with open('/home/kandzi/Загрузки/grades.txt', encoding='utf-8') as file:
     lst = [line.strip() for line in file.readlines()]
-    [print(i) for i in lst[len(lst)-10:] if len(lst) > 10 print(lst) else]
+    [print(i) for i in lst[len(lst)-10:] if len(lst) > 10]
+    [print(i) for i in lst if len(lst) <= 10]
+
