@@ -77,6 +77,4 @@ with open('/home/kandzi/Загрузки/code.txt', encoding='utf-8') as file:
         if lst[i].startswith('#') and i != len(lst)-1:
             res.append(lst[i+1])
     [lst_def.append(d) for d in lst if d not in res and not d.startswith('#')]
-    print(res)
-    print(lst)
     print(*(['Best Programming Team'], lst_def)[len(lst_def) != 0], sep='\n')
