@@ -62,15 +62,26 @@ dict_files = {mp3: {names: [], B: int, KB: int, MB: int}}
 """
 with (open('C:/Users/kandz/Downloads/files.txt', encoding='utf-8') as files):
     dict_files = dict()
-    # lst_files = [[i for i in line.split()] for line in files.readlines()]
+    units = [('GB', 2 ** 30), ('MB', 2 ** 20), ('KB', 2 ** 10), ('B', 1)]
     for line in files.readlines():
         file = line.split()
         name, exten = file[0].split('.')
-        if exten in dict_files:
-            dict_files[exten].append(name + '.' + exten)
-        else:
-            dict_files.update({exten: []})
+        size_name = sum(i[1] * int(file[1]) for i in units if i[0] == file[2])
+        dict_files.setdefault(exten, {'names': [], 'Summary': 0})
+        dict_files[exten]['names'].append(name + '.' + exten)
+        dict_files[exten]['Summary'] += size_name
+    sorted_dict_files = dict(sorted(dict_files.items()))
+    for key in sorted_dict_files.keys():
+        for tup in units:
+            size_files = (tup[0], round(sorted_dict_files[key]['Summary'] / tup[1]))
+            if size_files[1] >= 1:
+                break
+        print(*sorted(sorted_dict_files[key]['names']), sep='\n')
+        print('----------')
+        print(f'Summary: {size_files[1]} {size_files[0]}')
+        print()
 
 
-    print(dict_files)
-    # print(lst_files)
+
+
+
