@@ -50,23 +50,23 @@ Sample Output 3:
 
 False
 """
-from datetime import datetime, date
+from datetime import datetime
 
 pattern = '%d.%m.%Y'
 
 
 def is_available_date(booked_dates: list, date_for_booking: str) -> bool:
     def get_dates_rage(date_range: str) -> set:
-        set_out = set()
+        set_out = []
         if '-' in date_range:
             start, end = date_range.split('-')
             start = datetime.strptime(start, pattern)
             end = datetime.strptime(end, pattern)
-            [set_out.add(i) for i in
-             [datetime.fromordinal(i).date() for i in range(start.toordinal(), end.toordinal() + 1)]]
+            set_out.extend([datetime.fromordinal(i).date() for i in range(start.toordinal(), end.toordinal() + 1)])
         else:
-            set_out.add(datetime.strptime(date_range, pattern).date())
-        return set_out
+            set_out.append(datetime.strptime(date_range, pattern).date())
+        return set(set_out)
+
     booked_dates_set = set()
     for d in booked_dates:
         booked_dates_set.update(get_dates_rage(d))
