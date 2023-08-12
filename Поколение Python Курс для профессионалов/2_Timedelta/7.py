@@ -53,3 +53,14 @@ Sample Output 3:
 
 []
 """
+from datetime import datetime
+
+dates = [datetime.strptime(d, '%d.%m.%Y') for d in input().split()]
+start = dates[0]
+res = []
+for i in range(1, len(dates)):
+    res.append(abs(start - dates[i]).days)
+    start = dates[i]
+print(res)
+# **********************************************************************************************************
+diffs = [abs(dates[i] - dates[i-1]).days for i in range(1, len(dates))]
