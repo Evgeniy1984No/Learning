@@ -67,3 +67,4 @@ def get_all_thursday(year) -> list:
 
 
 [print(i[2].strftime('%d.%m.%Y')) for i in get_all_thursday(int(input()))]
+
