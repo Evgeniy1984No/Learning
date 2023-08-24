@@ -38,7 +38,7 @@ with (open('C:/Users/kandz/Downloads/data.csv', encoding='utf-8')) as file_in:
     for row in data:
         domain = row[2][row[2].index('@') + 1:]
         data_out[domain] = data_out.get(domain, 0) + 1
-
+    print(sorted(data_out.items(), key=lambda x: (x[1], x[0])))
     with (open('C:/Users/kandz/Downloads/domain_usage.csv', 'w', encoding='utf-8', newline='')) as file_out:
         writer = csv.writer(file_out, delimiter=',')
         writer.writerow(['domain', 'count'])
