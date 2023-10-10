@@ -115,6 +115,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Поколение Python Курс для профессионалов\7_JSON\data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
