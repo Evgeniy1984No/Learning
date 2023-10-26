@@ -35,4 +35,13 @@ with open('C:/Users/kandz/Downloads/meetings.csv', 'r', encoding='utf-8') as fil
     Friend = namedtuple('Friend', next(data))
     friends = [Friend._make(row) for row in data]
     [print(friend.surname, friend.name) for friend in sorted(friends, key=lambda x: datetime.strptime(x[2] + x[3], '%d.%m.%Y%H:%M'))]
+    print()
+# ******************************************************************************************************************
+with open('C:/Users/kandz/Downloads/meetings.csv', 'r', encoding='utf-8') as file_csv:
+    rows = csv.DictReader(file_csv)
+    Friend = namedtuple('Friend', rows.fieldnames)
+    meetings = [Friend(**row) for row in rows]
 
+    meetings.sort(key=lambda item: datetime.strptime(f'{item.meeting_date} {item.meeting_time}', '%d.%m.%Y %H:%M'))
+    for meeting in meetings:
+        print(meeting.surname, meeting.name)
