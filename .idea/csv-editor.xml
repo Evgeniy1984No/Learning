@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="C:\Users\kandz\Downloads\student_counts.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Поколение Python Курс для профессионалов\6_CSV files\condensed.csv">
           <value>
             <Attribute>
